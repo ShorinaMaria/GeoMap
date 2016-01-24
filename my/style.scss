@@ -157,6 +157,7 @@ input[type="text"],input[type="number"]{
   .ui-slider-handle{
     -ms-touch-action: none;
     touch-action: none;
+    cursor: pointer;
     background: $cyan1;
     outline: none;
     top: -5px;
