@@ -1,0 +1,72 @@
+
+// this is a single-line comment
+@mixin rounded($radius: 3px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+@mixin shadowed($shadows...) {
+  -webkit-box-shadow: $shadows;
+  -moz-box-shadow: $shadows;
+  -ms-box-shadow: $shadows;
+  -o-box-shadow: $shadows;
+  box-shadow: $shadows;
+} 
+@mixin user-selected($value: none){
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@mixin transitioned($value...){
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+@mixin gradiented($from, $to, $dir1, $dir2, $type, $param1, $param2){
+  background-image: -moz-linear-gradient($dir1, $from, $to);
+  background-image: -webkit-gradient(linear, $param1, $param2, from($from), to($to));
+  background-image: -webkit-linear-gradient($dir1, $from, $to);
+  background-image: -o-linear-gradient($dir1, $from, $to);
+  background-image: linear-gradient(to $dir2, $from, $to);
+  background-image: -ms-linear-gradient($dir1, $from, $to); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=$type);
+  //background: -webkit-gradient(linear, left top, right top, color-stop(0%,#a8f0ec), color-stop(50%,#20b2aa), color-stop(100%,#a8f0ec)); /* Chrome,Safari4+ */
+}
+@mixin borderbox(){
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+@mixin transform($value){
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+@mixin transform_imp($value){
+  -webkit-transform: $value !important;
+  -moz-transform: $value !important;
+  -ms-transform: $value !important;
+  transform: $value !important;
+}
+/*
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+
+    display: -moz-box;
+    -moz-box-orient: horizontal;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+
+    display: box;
+    box-orient: horizontal;
+    box-pack: center;
+    box-align: center;
+*/
